@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import FormStepOne from "./Components/FormStepOne"
+import FormStepTwo from "./Components/FormStepTwo"
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [step, setStep] = useState(1)
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    zip: '',
+    username: '',
+    password: '',
+    confirmPassword: ''
+  })
 
+  const nextStep = () => setStep(previous => previous + 1)
+  const previousStep = () => setStep(previous => previous - 1)
+
+  const updateFormData = (data) => {
+    setFormData(previous => ({ ...previous, ...data }))
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="max-w-xl mx-auto p-6">
+      {step === 1 && <FormStepOne nextStep={nextStep}  updateFormData={updateFormData} defaultValues={formData} />}
+
+      {step === 2 && <FormStepTwo nextStep={nextStep} previousStep={previousStep} updateFormData={updateFormData} defaultValues={formData} />}
+    </div>
     </>
   )
 }
