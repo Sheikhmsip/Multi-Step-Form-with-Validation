@@ -72,10 +72,6 @@ const App = () => {
           <FormSummary
             formData={formData}
             previousStep={previousStep}
-            onSubmit={(data) => {
-              console.log("Submitted data:", data);
-              alert("Form submitted successfully!");
-            }}
           />
         )}
       </div>

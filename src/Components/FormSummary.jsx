@@ -1,10 +1,15 @@
 import React from "react";
+import { useSubmitForm } from "../hooks/useSubmitForm";
+const FormSummary = ({ formData, previousStep }) => {
+  const { mutate, isLoading, isSuccess, isError, error } = useSubmitForm();
 
-const FormSummary = ({ formData, previousStep, onSubmit }) => {
+  const handleSubmit = () => {
+    mutate(formData);
+  };
+
   return (
     <div className="shadow-xl/30 p-4 space-y-4 md:w-[50%] mx-auto">
       <h2 className="text-xl font-bold mb-4">All Information Given by you </h2>
-
       <div className="bg-gray-100 text-black p-4 rounded space-y-2">
         <div>
           <strong>Full Name:</strong> {formData.fullName}
@@ -39,12 +44,17 @@ const FormSummary = ({ formData, previousStep, onSubmit }) => {
         </button>
 
         <button
-          onClick={() => onSubmit(formData)}
+          onClick={handleSubmit}
+          disabled={isLoading}
           className="bg-green-600 text-white px-4 py-2 rounded"
         >
-          Submit
+          {isLoading ? "Submitting..." : "Submit"}
         </button>
       </div>
+      {isSuccess && (
+        <p className="mt-4 text-green-500"> Submitted successfully!</p>
+      )}
+      {isError && <p className="mt-4 text-red-500"> Error: {error.message}</p>}
     </div>
   );
 };
