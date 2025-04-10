@@ -1,6 +1,6 @@
 # 🧾 Multi-Step Form
 
-This is a modern, responsive multi-step form built with **React**, **TailwindCSS**, **Zod**, **React Hook Form**. 
+This is a modern, responsive multi-step form built with **React**, **TailwindCSS**, **Zod**, **React Hook Form** , **React Query**. 
 It supports **dark mode toggle**, **form validation**, **live state sharing between steps**.
 
 ---
@@ -18,11 +18,13 @@ It supports **dark mode toggle**, **form validation**, **live state sharing betw
 - ✅ Multi-step form (4 steps)
 - 🌙 Dark mode toggle
 - 🧠 Validation with `zod` + `react-hook-form`
-<!-- - 📦 Simulated API submission with React Query -->
+- 📦 Simulated API submission with React Query (TanStack Query )
 - 🔐 Password visibility on toggle 
 - 💨 Styled with TailwindCSS 
 
 ---
+## 💻 [Live Link](https://inspiring-frangipane-6d248a.netlify.app/) 
+- you can see live Multi-Step Form to clicked live link. 
 
 ## 🛠️ Tech Stack
 
@@ -31,7 +33,7 @@ It supports **dark mode toggle**, **form validation**, **live state sharing betw
 - React Hook Form
 - Zod
 - More
-<!-- - React Query -->
+- React Query (TanStack Query )
 
 ---
 
@@ -39,16 +41,20 @@ It supports **dark mode toggle**, **form validation**, **live state sharing betw
 
 ## ⚙️ Setup Instructions
 
-
+# Open Terminal and follow the instructions 
 # Clone the repo
-git clone https://github.com/Sheikhmsip/Multi-Step-Form-with-Validation.git
-cd Multi-Step-Form-with-Validation
+- git clone https://github.com/Sheikhmsip/Multi-Step-Form-with-Validation.git
+- cd Multi-Step-Form-with-Validation
+- code . (if you use VS Code editor and want to see code) / Otherwise open this folder with any code editor.  
 
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev 
+
+# Open browser and go to the localhost server to see project . 
+
 
 ## 👨‍💻 Developer Information
 
