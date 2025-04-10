@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+// import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const FormStepThree = ({
   nextStep,
@@ -9,6 +10,8 @@ const FormStepThree = ({
   updateFormData,
   defaultValues,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const schema = z
     .object({
       username: z.string().min(4, "Username must be at least 4 characters"),
@@ -36,33 +39,72 @@ const FormStepThree = ({
 
   return (
     <>
-      <div className="md:w-[50%] mx-auto">
+      <div className="shadow-xl/30 p-4 md:w-[50%] mx-auto">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          <input
-            {...register("username")}
-            placeholder="Username"
-            className="w-full border p-2"
-          />
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              {...register("username")}
+              id="username"
+              placeholder=" "
+              className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer px-2 dark:text-white"
+            />
+            <label
+              for="username"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Username
+            </label>
+          </div>
           {errors.username && (
             <p className="text-red-500">{errors.username.message}</p>
           )}
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type={showPassword ? "text" : "password"}
+              {...register("password")}
+              id="password"
+              placeholder=" "
+              className="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer px-2 dark:text-white"
+            />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
+            >
+              {showPassword ? "Hide" : "Show"}
+            </span>
+            <label
+              for="password"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Password
+            </label>
+          </div>
 
-          <input
-            type="password"
-            {...register("password")}
-            placeholder="Password"
-            className="w-full border p-2"
-          />
           {errors.password && (
             <p className="text-red-500">{errors.password.message}</p>
           )}
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type={showConfirm ? "text" : "password"}
+              {...register("confirmPassword")}
+              id="confirmPassword"
+              placeholder=" "
+              className="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer px-2 dark:text-white"
+            />
+           <span
+            onClick={() => setShowConfirm(!showConfirm)}
+            className="absolute right-3 top-3 text-gray-500 cursor-pointer"
+          >
+            {showConfirm ? "Hide" : "Show"}
+          </span>
+            <label
+              for="confirmPassword"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Confirm Password
+            </label>
+          </div>
 
-          <input
-            type="password"
-            {...register("confirmPassword")}
-            placeholder="Confirm Password"
-            className="w-full border p-2"
-          />
           {errors.confirmPassword && (
             <p className="text-red-500">{errors.confirmPassword.message}</p>
           )}

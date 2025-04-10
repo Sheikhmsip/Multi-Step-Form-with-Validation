@@ -30,15 +30,18 @@ const App = () => {
   return (
     <>
       <div className="dark:bg-gradient-to-r from-black via-blue-950 to-purple-950 p-6  min-h-[100vh] bg-white text-gray-900 dark:text-white transition-colors duration-300">
+      <div className="flex item-center justify-center gap-20">
       <h1 className="text-xl text-center dark:text-white py-2 font-bold">Multi-Step Form</h1> 
-      <div className="flex justify-end p-4">
+   
         <button
           onClick={() => setDarkMode(!darkMode)}
           className="bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded"
         >
           {darkMode ? "☀ Light Mode" : "🌙 Dark Mode"}
         </button>
-      </div>        
+     
+      </div>
+             
         {step === 1 && (
           <FormStepOne
             nextStep={nextStep}

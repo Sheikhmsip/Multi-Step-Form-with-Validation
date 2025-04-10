@@ -2,8 +2,8 @@ import React from "react";
 
 const FormSummary = ({ formData, previousStep, onSubmit }) => {
   return (
-    <div className="space-y-4 md:w-[50%] mx-auto">
-      <h2 className="text-xl font-bold mb-4">Review Your Information</h2>
+    <div className="shadow-xl/30 p-4 space-y-4 md:w-[50%] mx-auto">
+      <h2 className="text-xl font-bold mb-4">All Information Given by you </h2>
 
       <div className="bg-gray-100 text-black p-4 rounded space-y-2">
         <div>
