@@ -3,6 +3,7 @@ import FormStepOne from "./Components/FormStepOne";
 import FormStepTwo from "./Components/FormStepTwo";
 import FormStepThree from "./Components/FormStepThree";
 import FormSummary from "./Components/FormSummary";
+import { useDarkMode } from "./contexts/darkMode";
 
 const App = () => {
   const [step, setStep] = useState(1);
@@ -24,9 +25,20 @@ const App = () => {
   const updateFormData = (data) => {
     setFormData((previous) => ({ ...previous, ...data }));
   };
+  const { darkMode, setDarkMode } = useDarkMode();
+
   return (
     <>
-      <div className="max-w-xl mx-auto p-6">
+      <div className="dark:bg-gradient-to-r from-black via-blue-950 to-purple-950 p-6  min-h-[100vh] bg-white text-gray-900 dark:text-white transition-colors duration-300">
+      <h1 className="text-xl text-center dark:text-white py-2 font-bold">Multi-Step Form</h1> 
+      <div className="flex justify-end p-4">
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded"
+        >
+          {darkMode ? "☀ Light Mode" : "🌙 Dark Mode"}
+        </button>
+      </div>        
         {step === 1 && (
           <FormStepOne
             nextStep={nextStep}

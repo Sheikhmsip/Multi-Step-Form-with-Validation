@@ -22,16 +22,16 @@ const FormStepOne = ({ nextStep, updateFormData, defaultValues }) => {
 
   const onSubmit = (data) => {
     updateFormData(data);
-    nextStep();
+    nextStep(); 
   };
 
   return (
-    <div>
+    <div className="w-[50%] mx-auto">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <input
           {...register("fullName")}
           placeholder="Full Name"
-          className="w-full border p-2"
+          className="w-full border p-2 text-black dark:text-white"
         />
         {errors.fullName && (
           <p className="text-red-500">{errors.fullName.message}</p>
@@ -40,14 +40,14 @@ const FormStepOne = ({ nextStep, updateFormData, defaultValues }) => {
         <input
           {...register("email")}
           placeholder="Email"
-          className="w-full border p-2"
+          className="w-full border p-2 text-black dark:text-white"
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
 
         <input
           {...register("phone")}
           placeholder="Phone Number"
-          className="w-full border p-2"
+          className="w-full border p-2 text-black dark:text-white"
         />
         {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
 

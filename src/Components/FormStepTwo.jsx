@@ -24,10 +24,10 @@ const FormStepTwo = ({ nextStep, previousStep, updateFormData, defaultValues }) 
 
   const onSubmit = (data) => {
     updateFormData(data);
-    nextStep();
+    nextStep(); 
   };
   return (
-    <div>
+    <div className="md:w-[50%] mx-auto">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <input
           {...register("address")}
