@@ -18,19 +18,20 @@ It supports **dark mode toggle**, **form validation**, **live state sharing betw
 - ✅ Multi-step form (4 steps)
 - 🌙 Dark mode toggle
 - 🧠 Validation with `zod` + `react-hook-form`
-- 📦 Simulated API submission with React Query
-- 🔐 Password visibility toggle on Step 3
-- 💨 Styled with TailwindCSS v4.1
+<!-- - 📦 Simulated API submission with React Query -->
+- 🔐 Password visibility on toggle 
+- 💨 Styled with TailwindCSS 
 
 ---
 
 ## 🛠️ Tech Stack
 
 - React
-- TailwindCSS v4.1
+- TailwindCSS 
 - React Hook Form
 - Zod
-- React Query
+- More
+<!-- - React Query -->
 
 ---
 
@@ -59,7 +60,4 @@ npm run dev
 
 ### 🌐 Connect with Me
 
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/sheikhsip)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sheikhmsip)  
-[![GitHub](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Sheikhmsip)  
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/8801785884679)
+<p align="left"> <a href="https://facebook.com/sheikhsip" target="_blank"> <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" /> </a> <a href="https://linkedin.com/in/sheikhmsip" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /> </a> <a href="https://github.com/Sheikhmsip" target="_blank"> <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> </a> <a href="https://wa.me/8801785884679" target="_blank"> <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" /> </a> </p>
