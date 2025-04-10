@@ -39,7 +39,7 @@ It supports **dark mode toggle**, **form validation**, **live state sharing betw
 
 ## ⚙️ Setup Instructions
 
-```bash
+
 # Clone the repo
 git clone https://github.com/Sheikhmsip/Multi-Step-Form-with-Validation.git
 cd Multi-Step-Form-with-Validation
